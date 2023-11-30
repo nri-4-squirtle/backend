@@ -37,7 +37,8 @@ export const handler = async (event) => {
       item = {
         placeId: placeId,
         carNum: null,
-        reputations: null,
+        //reputations: null,
+        reputations: [],
       };
 
       await dynamo.send(
@@ -55,9 +56,9 @@ export const handler = async (event) => {
     statusCode: 200,
     body: JSON.stringify(resBody),
     headers: {
-      "Access-Control-Allow-Headers": "*",
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
     },
   };
 };
